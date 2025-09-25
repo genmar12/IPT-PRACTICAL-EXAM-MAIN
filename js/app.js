@@ -40,7 +40,7 @@ function addStudent() {
 // Event listener for the button
 $("#addStudentButton").click(addStudent);
 
-// Add event listener to the button
+/// Add event listener to the button
 $("#addSubject").click(addSubject);
 
 function addSubject() {
