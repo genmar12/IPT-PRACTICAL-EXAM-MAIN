@@ -4,10 +4,10 @@
 function addStudent() {
     // Collect values from the form
     const student = {
-        idNumber: document.getElementById("idNumber").value.trim(),
-        firstName: document.getElementById("firstName").value.trim(),
-        middleName: document.getElementById("middleName").value.trim(),
-        lastName: document.getElementById("lastName").value.trim(),
+        idNumber: $("#idNumber").val().trim(),
+        firstName: $("#firstName").val().trim(),
+        middleName: $("#middleName").val().trim(),
+        lastName: $("#lastName").val().trim(),
     };
 
     // Validation: check if required fields are filled
@@ -20,34 +20,34 @@ function addStudent() {
     }
 
     // Add new row to table
-    const tableBody = document.getElementById("table-content");
-    const newRow = document.createElement("tr");
+    const tableBody = $("#table-content");
+    const newRow = $("<tr>");
 
-    newRow.innerHTML = `
+    newRow.html(`
         <td>${student.idNumber}</td>
         <td>${student.firstName}</td>
         <td>${student.middleName}</td>
         <td>${student.lastName}</td>
-    `;
+    `);
 
-    tableBody.appendChild(newRow);
+    tableBody.append(newRow);
 
     // Reset form and focus back on ID Number
-    document.getElementById("studentForm").reset();
-    document.getElementById("idNumber").focus();
+    $("#studentForm")[0].reset();
+    $("#idNumber").focus();
 }
 
 // Event listener for the button
-document.getElementById("addStudentButton").addEventListener("click", addStudent);
+$("#addStudentButton").click(addStudent);
 
 // Add event listener to the button
-$("#addSubject").click(addSubject)
+$("#addSubject").click(addSubject);
 
 function addSubject() {
     // Get values from the form
-    const subjectCode = document.getElementById("subjectCode").value.trim();
-    const subjectName = document.getElementById("subjectName").value.trim();
-    const units = document.getElementById("units").value.trim();
+    const subjectCode = $("#subjectCode").val().trim();
+    const subjectName = $("#subjectName").val().trim();
+    const units = $("#units").val().trim();
 
     // Validation: check if required fields are filled
     if (subjectCode === "" || subjectName === "" || units === "") {
@@ -56,20 +56,19 @@ function addSubject() {
     }
 
     // Create a new row
-    const tableBody = document.getElementById("table-content");
-    const newRow = document.createElement("tr");
+    const tableBody = $("#table-content");
+    const newRow = $("<tr>");
 
     // Insert cells into the row
-    newRow.innerHTML = `
+    newRow.html(`
         <td>${subjectCode}</td>
         <td>${subjectName}</td>
         <td>${units}</td>
-    `;
+    `);
 
     // Append row to table
-    tableBody.appendChild(newRow);
+    tableBody.append(newRow);
 
     // Clear the form fields
-    document.getElementById("subjectForm").reset();
+    $("#subjectForm")[0].reset();
 }
-
