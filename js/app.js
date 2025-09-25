@@ -37,11 +37,11 @@ function addStudent() {
     $("#idNumber").focus();
 }
 
-// Event listener for the button
-$("#addStudentButton").click(addStudent);
+    // Event listener for the button
+    $("#addStudentButton").click(addStudent);
 
-/// Add event listener to the button
-$("#addSubject").click(addSubject);
+    /// Add event listener to the button
+    $("#addSubject").click(addSubject);
 
 function addSubject() {
     // Get values from the form
